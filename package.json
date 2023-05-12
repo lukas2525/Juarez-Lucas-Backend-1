@@ -1,0 +1,25 @@
+{
+  "name": "programacion-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukas2525/Juarez-Lucas-Backend-1.git"
+  },
+  "keywords": [],
+  "author": "lucas juárez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lukas2525/Juarez-Lucas-Backend-1/issues"
+  },
+  "homepage": "https://github.com/lukas2525/Juarez-Lucas-Backend-1#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "moment": "^2.29.4"
+  }
+}
