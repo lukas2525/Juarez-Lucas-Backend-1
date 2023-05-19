@@ -77,7 +77,7 @@ export default class ProductManager {
     if (findProd) {
       return findProd;
     } else {
-      return { error: "no se encontro producto con es id" };
+      return { error: "no se encontro el producto con ese id" };
     }
   }
 
