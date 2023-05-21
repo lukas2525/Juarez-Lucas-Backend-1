@@ -94,4 +94,10 @@ async function addProd() {
   );
 }
 
+export let carts = [
+  {name: "simon", raza:"bulldog frances", edad: 1},
+  {name: "coco", raza:"caniche", edad: 2},
+  {name: "zoe", raza:"comun", edad: 10},
+]
+
 addProd();
