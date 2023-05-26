@@ -95,9 +95,33 @@ async function addProd() {
 }
 
 export let carts = [
-  {name: "simon", raza:"bulldog frances", edad: 1},
-  {name: "coco", raza:"caniche", edad: 2},
-  {name: "zoe", raza:"comun", edad: 10},
+  {name: "simon", raza:"bulldog frances", edad: 1, precio: 20000},
+  {name: "coco", raza:"caniche", edad: 2, precio: 5000},
+  {name: "zoe", raza:"comun", edad: 10, precio: 1000},
+  {name: "teo", raza:"shitsu", edad: 12, precio: 10000},
+  {name: "luna", raza:"comun", edad: 15, precio: 5000},
+  {name: "samuel", raza:"loro", edad: 5, precio: 1000},
+  {name: "pesuti", raza:"jilgero", edad: 2, precio: 1500},
+  {name: "roberto", raza:"bulldog frances", edad: 3, precio: 18000},
+  {name: "lucas", raza:"boxer", edad: 10, precio: 12000},
+  {name: "roma", raza:"pitbull", edad: 6, precio: 8000},
 ]
+
+import path from "path";
+import { fileURLToPath } from "url";
+export const __filename = fileURLToPath(import.meta.url);
+export const __dirname = path.dirname(__filename);
+
+import multer from "multer";
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, __dirname + "/public");
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  },
+});
+
+export const uploader = multer({ storage });
 
 addProd();

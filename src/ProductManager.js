@@ -26,7 +26,7 @@ export default class ProductManager {
     const codeError = this.products.find((prod) => prod.code == code);
 
     if (codeError) {
-      console.log("Error code, existing code");
+      //console.log("Error code, existing code");
     } else {
       this.id++;
       title = title || "no se ingreso ningun valor";

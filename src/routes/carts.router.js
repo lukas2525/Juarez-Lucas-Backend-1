@@ -10,7 +10,7 @@ routerCarts.get("/", (req, res) => {
     const cartsFiltradosPorEdad = carts.filter((p) => p.edad == edad);
     return res.status(200).json({
       status: "success",
-      msg: "te paso todos los carts cuyo edad = " + edad,
+      msg: "te paso todos los carts cuya edad = " + edad,
       data: cartsFiltradosPorEdad,
     });
   } else {
