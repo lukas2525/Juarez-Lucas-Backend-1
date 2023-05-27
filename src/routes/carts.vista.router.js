@@ -6,6 +6,5 @@ export const routerVistaCarts = express.Router();
 routerVistaCarts.get("/", async (req, res) => {
   return res.render("carts-html", {
     carts: carts,
-    dolar: 490,
   });
 });

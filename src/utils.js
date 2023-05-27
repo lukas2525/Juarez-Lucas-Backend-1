@@ -95,16 +95,16 @@ async function addProd() {
 }
 
 export let carts = [
-  {name: "simon", raza:"bulldog frances", edad: 1, precio: 20000},
-  {name: "coco", raza:"caniche", edad: 2, precio: 5000},
-  {name: "zoe", raza:"comun", edad: 10, precio: 1000},
-  {name: "teo", raza:"shitsu", edad: 12, precio: 10000},
-  {name: "luna", raza:"comun", edad: 15, precio: 5000},
-  {name: "samuel", raza:"loro", edad: 5, precio: 1000},
-  {name: "pesuti", raza:"jilgero", edad: 2, precio: 1500},
-  {name: "roberto", raza:"bulldog frances", edad: 3, precio: 18000},
-  {name: "lucas", raza:"boxer", edad: 10, precio: 12000},
-  {name: "roma", raza:"pitbull", edad: 6, precio: 8000},
+  {nombre: "simon", raza:"bulldog frances", edad: 1, precio: 20000},
+  {nombre: "coco", raza:"caniche", edad: 2, precio: 5000},
+  {nombre: "zoe", raza:"comun", edad: 10, precio: 1000},
+  {nombre: "teo", raza:"shitsu", edad: 12, precio: 10000},
+  {nombre: "luna", raza:"comun", edad: 15, precio: 5000},
+  {nombre: "samuel", raza:"loro", edad: 5, precio: 1000},
+  {nombre: "pesuti", raza:"jilgero", edad: 2, precio: 1500},
+  {nombre: "roberto", raza:"bulldog frances", edad: 3, precio: 18000},
+  {nombre: "lucas", raza:"boxer", edad: 10, precio: 12000},
+  {nombre: "roma", raza:"pitbull", edad: 6, precio: 8000},
 ]
 
 import path from "path";

@@ -39,14 +39,17 @@ app.get("*", (req, res) => {
 });
 // FIN NUESTROS ENDPOINT
 
+// INICIAMOS EL SERVIDOR
 const httpServer = app.listen(port, () =>
   console.log(`escuchando el puerto ${port}`)
 );
 
 const socketServer = new Server(httpServer);
-
+let msgs = [];
 socketServer.on("connection", (socket) => {
-
-  // FRONT EMITE "msg_server_to_front"
-  // socket.emit("msg_server_to_front", { author: "server", msg: "bienvenido!!" });
+  socket.on("msg_front_to_back", (msg) => {
+    msgs.push(msg);
+    console.log(msgs);
+    socketServer.emit("todos_los_msgs", msgs);
+  });
 });

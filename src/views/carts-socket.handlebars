@@ -1,10 +1,23 @@
 <div>
-  <h1>Bienvenidos a la app de mis mascotas!</h1>
+  <h1>Bienvenido a mis Mascotas!</h1>
+
   <h3>Listado de msgs:</h3>
   <div id="div-msgs" style="border: 1px solid blue;margin-bottom: 20px;">
     Loading...
   </div>
-  <input id="input-msg" type="text" value="" placeholder="Ingrese algo.." />
+  <h1>Crear Mascota</h1>
+  <form id="mi-formulario">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" nombre="nombre" required><br><br>
+
+    <label for="raza">Raza</label>
+    <input type="text" id="raza" nombre="raza" required><br><br>
+
+    <label for="precio">Precio</label>
+    <input type="text" id="precio" nombre="precio" required><br><br>
+    
+    <input type="submit" value="Enviar" onclick="enviarFormulario(event)">
+  </form>
 </div>
 
 <script src="/socket.io/socket.io.js"></script>
