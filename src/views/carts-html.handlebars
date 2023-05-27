@@ -1,5 +1,10 @@
 <div>
+  {{#if titulo}}
   <h1>{{titulo}}</h1>
+  {{else}}
+  <h1>TITULO: MASCOTAS</h1>
+  {{/if}}
+  <h3>Dolar: {{dolar}} </h3>
   {{#each carts}}
   
   <p>{{this.name}}</p>
