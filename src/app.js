@@ -1,9 +1,8 @@
-
 import express from "express";
-import { routerCarts } from "./routes/carts.router.js";
 import { routerProducts } from "./routes/products.router.js";
+import { routerCarts } from "./routes/carts.router.js";
 import { routerVistaCarts } from "./routes/carts.vista.router.js";
-import { routerVistaChatSocket } from "./routes/chat-socket.vista.router.js";
+import { routerVistaCartsSocket } from "./routes/carts-socket.vista.router.js";
 import handlebars from "express-handlebars";
 import { __dirname } from "./utils.js";
 import { Server } from "socket.io";
@@ -29,9 +28,9 @@ app.use("/api/carts", routerCarts);
 app.use("/vista/carts", routerVistaCarts);
 
 // VISTA SOCKETS
-app.use("/vista/chat-socket", routerVistaChatSocket);
+app.use("/vista/carts-socket", routerVistaCartsSocket);
 
-app.get("*", (req, res)=>{
+app.get("*", (req, res) => {
   return res.status(404).json({
     status: "error",
     msg: "error, esa ruta no existe",
@@ -40,6 +39,14 @@ app.get("*", (req, res)=>{
 });
 // FIN NUESTROS ENDPOINT
 
-const httpServer = app.listen(port, () => console.log(`escuchando el puerto ${port}`));
+const httpServer = app.listen(port, () =>
+  console.log(`escuchando el puerto ${port}`)
+);
 
 const socketServer = new Server(httpServer);
+
+socketServer.on("connection", (socket) => {
+
+  // FRONT EMITE "msg_server_to_front"
+  // socket.emit("msg_server_to_front", { author: "server", msg: "bienvenido!!" });
+});
