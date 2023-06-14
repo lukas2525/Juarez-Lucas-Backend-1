@@ -4,10 +4,14 @@ import { routerCarts } from "./routes/carts.router.js";
 import { routerVistaCarts } from "./routes/carts.vista.router.js";
 import { routerVistaCartsSocket } from "./routes/carts-socket.vista.router.js";
 import handlebars from "express-handlebars";
-import { __dirname } from "./utils.js";
+import { __dirname, connectMongo } from "./utils.js";
 import { Server } from "socket.io";
+import { routerUsers } from "./routes/users.router.js";
 const app = express();
 const port = 8080;
+
+// mongodb+srv://juarezlucasangel:usDQMDChSj0eHvDt@cluster0.cjvlnsd.mongodb.net/?retryWrites=true&w=majority
+connectMongo();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -23,6 +27,7 @@ app.use(express.static(__dirname + "/public"));
 // TODOS NUESTROS ENDPOINT CON DATOS CRUDOS
 app.use("/api/products", routerProducts);
 app.use("/api/carts", routerCarts);
+app.use("/api/users", routerUsers);
 
 // VISTA HTML REAL
 app.use("/vista/carts", routerVistaCarts);
