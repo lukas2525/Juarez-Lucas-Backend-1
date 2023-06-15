@@ -1,12 +1,14 @@
+//@ts-check
 import express from "express";
-import { routerProducts } from "./routes/products.router.js";
+/* import { routerProducts } from "./routes/products.router.js";
 import { routerCarts } from "./routes/carts.router.js";
 import { routerVistaCarts } from "./routes/carts.vista.router.js";
-import { routerVistaCartsSocket } from "./routes/carts-socket.vista.router.js";
+import { routerVistaCartsSocket } from "./routes/carts-socket.vista.router.js"; */
 import handlebars from "express-handlebars";
-import { __dirname, connectMongo } from "./utils.js";
+import { __dirname } from "./dirname.js";
 import { Server } from "socket.io";
 import { routerUsers } from "./routes/users.router.js";
+import { connectMongo } from "./utils/connections.js";
 const app = express();
 const port = 8080;
 
@@ -25,15 +27,18 @@ app.set("view engine", "handlebars");
 app.use(express.static(__dirname + "/public"));
 
 // TODOS NUESTROS ENDPOINT CON DATOS CRUDOS
-app.use("/api/products", routerProducts);
-app.use("/api/carts", routerCarts);
-app.use("/api/users", routerUsers);
 
-// VISTA HTML REAL
+/* app.use("/api/products", routerProducts);
+app.use("/api/carts", routerCarts);
+*/
+
+/* // VISTA HTML REAL
 app.use("/vista/carts", routerVistaCarts);
 
 // VISTA SOCKETS
-app.use("/vista/carts-socket", routerVistaCartsSocket);
+app.use("/vista/carts-socket", routerVistaCartsSocket); */
+
+app.use("/api/users", routerUsers); 
 
 app.get("*", (req, res) => {
   return res.status(404).json({

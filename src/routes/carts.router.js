@@ -1,6 +1,6 @@
-
+/* 
 import express from "express";
-import { carts } from "../utils.js";
+import { carts } from "../utils/utils.js";
 
 export const routerCarts = express.Router();
 
@@ -90,4 +90,4 @@ routerCarts.post("/", (req, res) => {
     msg: "creamos el cart que pediste",
     data: cartParaCrear,
   });
-});
+}); */

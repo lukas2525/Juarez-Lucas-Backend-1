@@ -1,6 +1,6 @@
-
+/* 
 import express from "express";
-import { prodManager } from "../utils.js";
+import { prodManager } from "../utils/utils.js";
 
 export const routerProducts = express.Router()
 
@@ -67,4 +67,4 @@ routerProducts.get("/:pid", async (req, res) => {
       data: productoParaCrear,
     });
   });
-});
+}); */
